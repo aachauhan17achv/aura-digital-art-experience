@@ -1,0 +1,86 @@
+{
+  "name": "AURA // Magnific-Inspired Vector Design System",
+  "version": "1.0.0",
+  "author": "Antigravity Pair Programmer",
+  "description": "Figma Design System tokens derived from Magnific vector library specifications for modern digital art and immersive interactive experiences.",
+  "tokens": {
+    "color": {
+      "surface": {
+        "void": { "value": "#05060A", "type": "color", "description": "Absolute dark void background" },
+        "panel": { "value": "#0C0F18", "type": "color", "description": "Glass elevation surface (65% opacity + 28px blur)" },
+        "elevated": { "value": "#141724", "type": "color", "description": "Top layer card and popup fill" }
+      },
+      "chromatic": {
+        "neonCyan": { "value": "#00F0FF", "type": "color", "description": "High-frequency vector line accent" },
+        "electricViolet": { "value": "#7000FF", "type": "color", "description": "Primary chromatic transition tone" },
+        "plasmaPink": { "value": "#FF007A", "type": "color", "description": "Dynamic energy pulse accent" },
+        "solarAmber": { "value": "#F59E0B", "type": "color", "description": "Thermal kinetic element" },
+        "emeraldFlow": { "value": "#10B981", "type": "color", "description": "Organic vector wavelength" }
+      },
+      "border": {
+        "subtle": { "value": "rgba(255, 255, 255, 0.08)", "type": "color" },
+        "glow": { "value": "rgba(0, 240, 255, 0.4)", "type": "color" },
+        "violetGlow": { "value": "rgba(112, 0, 255, 0.35)", "type": "color" }
+      },
+      "text": {
+        "primary": { "value": "#FFFFFF", "type": "color" },
+        "secondary": { "value": "#94A3B8", "type": "color" },
+        "muted": { "value": "#64748B", "type": "color" }
+      }
+    },
+    "typography": {
+      "displayXXL": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "64px",
+        "fontWeight": "800",
+        "letterSpacing": "-0.04em",
+        "lineHeight": "1.05"
+      },
+      "headingXL": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "32px",
+        "fontWeight": "700",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "1.2"
+      },
+      "headingMD": {
+        "fontFamily": "Space Grotesk",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "letterSpacing": "0.02em"
+      },
+      "body": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "codeMono": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "11px",
+        "fontWeight": "500",
+        "letterSpacing": "0.05em"
+      }
+    },
+    "effects": {
+      "glassPanel": {
+        "backdropFilter": "blur(28px) saturate(180%)",
+        "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+      },
+      "cyanGlow": {
+        "boxShadow": "0 0 24px rgba(0, 240, 255, 0.4)"
+      },
+      "violetGlow": {
+        "boxShadow": "0 0 32px rgba(112, 0, 255, 0.45)"
+      }
+    },
+    "radii": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "14px",
+      "lg": "22px",
+      "full": "9999px"
+    }
+  }
+}
+

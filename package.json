@@ -1,0 +1,24 @@
+{
+  "name": "aura-digital-art-experience",
+  "version": "1.0.0",
+  "description": "AURA // Immersive Digital Art & Generative Vector Design System inspired by Magnific vector aesthetics.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "preview": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "generative-art",
+    "vector-design-system",
+    "web-audio-api",
+    "html5-canvas",
+    "interactive-experience",
+    "figma-tokens"
+  ],
+  "author": "aachauhan17achv <aachauhan17.ac.hv@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

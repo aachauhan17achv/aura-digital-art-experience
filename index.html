@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA // Immersive Digital Art & Vector System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-obsidian">
+  <!-- Interactive WebGL/Canvas Experience Background -->
+  <div id="experience-viewport">
+    <canvas id="art-canvas"></canvas>
+    <div class="vignette-overlay"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- Ambient Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-left">
+      <div class="brand-badge">
+        <span class="brand-symbol">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#paint0_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="url(#paint2_linear)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="2" y1="2" x2="22" y2="12" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00F0FF"/>
+                <stop offset="1" stop-color="#7000FF"/>
+              </linearGradient>
+              <linearGradient id="paint1_linear" x1="2" y1="17" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7000FF"/>
+                <stop offset="1" stop-color="#FF007A"/>
+              </linearGradient>
+              <linearGradient id="paint2_linear" x1="2" y1="12" x2="22" y2="17" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00F0FF"/>
+                <stop offset="1" stop-color="#FF007A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-title">AURA // <span class="dim">VECTOR DESIGN SYSTEM</span></span>
+      </div>
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-text">60 FPS // GEN-AUDIO ACTIVE</span>
+      </div>
+    </div>
+
+    <!-- Art Exhibition Switcher -->
+    <div class="exhibition-pill">
+      <button class="exhibit-tab active" data-mode="flowfield">01. Vector Morph</button>
+      <button class="exhibit-tab" data-mode="aurora">02. Neon Silk</button>
+      <button class="exhibit-tab" data-mode="lattice">03. Matrix 3D</button>
+      <button class="exhibit-tab" data-mode="supernova">04. Singularity</button>
+      <button class="exhibit-tab" data-mode="topography">05. Topography</button>
+    </div>
+
+    <div class="nav-right">
+      <button id="btn-audio" class="control-icon-btn" title="Toggle Procedural Audio Soundscape">
+        <svg id="audio-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+        <span class="btn-label">AUDIO SOUNDSCAPE</span>
+      </button>
+
+      <button id="btn-design-system" class="pill-btn primary" title="Open Vector Design System Library">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>DESIGN SYSTEM</span>
+      </button>
+
+      <button id="btn-fullscreen" class="control-icon-btn" title="Toggle Immersive Fullscreen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Central Dynamic Floating Hero Card -->
+  <main class="hero-stage" id="hero-stage">
+    <div class="hero-content">
+      <div class="pill-tag">
+        <span class="tag-glow"></span>
+        <span>MAGNIFIC-INSPIRED VECTOR AESTHETIC</span>
+      </div>
+      <h1 class="hero-glitch-title" data-text="CHROMATIC FLUIDITY">CHROMATIC FLUIDITY</h1>
+      <p class="hero-subtext">
+        An interactive generative vector experience built with procedural mathematics, real-time audio modulation, and chromatic elevation tokens. Move your cursor to bend the fields.
+      </p>
+
+      <div class="hero-actions">
+        <button id="btn-interact" class="action-btn glow-cta">
+          <span class="btn-spark"></span>
+          <span>ENTER INTERACTION FLOW</span>
+        </button>
+        <button id="btn-export-canvas" class="action-btn secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>EXPORT VECTOR SNAPSHOT</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Interactive Floating Control Dock -->
+  <div class="control-dock">
+    <div class="dock-panel">
+      <!-- Chaos Slider -->
+      <div class="control-group">
+        <label for="slider-chaos">TURBULENCE</label>
+        <div class="slider-wrapper">
+          <input type="range" id="slider-chaos" min="0.1" max="3.0" step="0.05" value="1.2">
+          <span class="val-display" id="val-chaos">1.2</span>
+        </div>
+      </div>
+
+      <!-- Particle Density -->
+      <div class="control-group">
+        <label for="slider-particles">VECTOR DENSITY</label>
+        <div class="slider-wrapper">
+          <input type="range" id="slider-particles" min="200" max="2500" step="50" value="1200">
+          <span class="val-display" id="val-particles">1200</span>
+        </div>
+      </div>
+
+      <!-- Flow Velocity -->
+      <div class="control-group">
+        <label for="slider-speed">KINETIC SPEED</label>
+        <div class="slider-wrapper">
+          <input type="range" id="slider-speed" min="0.2" max="4.0" step="0.1" value="1.4">
+          <span class="val-display" id="val-speed">1.4</span>
+        </div>
+      </div>
+
+      <!-- Chromatic Palette Preset Switcher -->
+      <div class="control-group">
+        <label>CHROMATIC THEME</label>
+        <div class="palette-swatches">
+          <button class="palette-swatch active" data-palette="cyberpunk" style="background: linear-gradient(135deg, #00f0ff, #7000ff, #ff007a);" title="Cyber Neon"></button>
+          <button class="palette-swatch" data-palette="spectral" style="background: linear-gradient(135deg, #10b981, #06b6d4, #6366f1);" title="Spectral Aurora"></button>
+          <button class="palette-swatch" data-palette="solar" style="background: linear-gradient(135deg, #f59e0b, #ef4444, #7c3aed);" title="Solar Flare"></button>
+          <button class="palette-swatch" data-palette="monochrome" style="background: linear-gradient(135deg, #ffffff, #64748b, #0f172a);" title="Liquid Silver"></button>
+        </div>
+      </div>
+
+      <!-- Interactive Repulsor Toggle -->
+      <div class="control-group btn-col">
+        <button id="btn-gravity" class="toggle-switch-btn active" title="Toggle cursor gravity mode">
+          <span class="indicator-led"></span>
+          <span>VORTEX FIELD</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Design System Drawer / Modal (Figma Reference) -->
+  <aside class="design-system-drawer" id="design-system-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <h3>FIGMA VECTOR DESIGN SYSTEM</h3>
+        <p class="token-sub">Magnific-Inspired Foundations & Tokens</p>
+      </div>
+      <button id="btn-close-drawer" class="btn-close">&times;</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Color Tokens Section -->
+      <section class="token-section">
+        <h4 class="section-label">01 // COLOR SPECIFICATIONS & CHROMATIC TOKENS</h4>
+        <div class="color-grid">
+          <div class="color-card">
+            <div class="swatch" style="background: #06070B;"></div>
+            <div class="token-meta">
+              <span class="token-name">color-surface-void</span>
+              <span class="token-hex">#06070B</span>
+              <span class="token-usage">Deep space background canvas</span>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="swatch" style="background: #0E1017;"></div>
+            <div class="token-meta">
+              <span class="token-name">color-surface-panel</span>
+              <span class="token-hex">#0E1017</span>
+              <span class="token-usage">Glass elevation container</span>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="swatch" style="background: #00F0FF; box-shadow: 0 0 16px rgba(0,240,255,0.4);"></div>
+            <div class="token-meta">
+              <span class="token-name">color-neon-cyan</span>
+              <span class="token-hex">#00F0FF</span>
+              <span class="token-usage">Primary kinetic vector energy</span>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="swatch" style="background: #7000FF; box-shadow: 0 0 16px rgba(112,0,255,0.4);"></div>
+            <div class="token-meta">
+              <span class="token-name">color-electric-violet</span>
+              <span class="token-hex">#7000FF</span>
+              <span class="token-usage">Chromatic transition node</span>
+            </div>
+          </div>
+          <div class="color-card">
+            <div class="swatch" style="background: #FF007A; box-shadow: 0 0 16px rgba(255,0,122,0.4);"></div>
+            <div class="token-meta">
+              <span class="token-name">color-plasma-rose</span>
+              <span class="token-hex">#FF007A</span>
+              <span class="token-usage">High-voltage accent & pulse</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vector Components Showcase -->
+      <section class="token-section">
+        <h4 class="section-label">02 // ATOMIC COMPONENT SYSTEM (MAGNIFIC SPEC)</h4>
+        
+        <div class="component-demo-box">
+          <span class="demo-sub">Glassmorphic Elevate Card & Micro-Interactions</span>
+          <div class="glass-card-sample">
+            <div class="glass-card-header">
+              <div class="mini-glyph-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <span class="component-tag">AUTO-LAYOUT: 16px</span>
+            </div>
+            <h5>Interactive Holographic Node</h5>
+            <p>Components utilize <code>backdrop-filter: blur(28px)</code> paired with 1px translucent border highlight for depth.</p>
+            <div class="component-buttons-row">
+              <button class="spec-btn primary">Primary Token</button>
+              <button class="spec-btn ghost">Glass Ghost</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="component-demo-box">
+          <span class="demo-sub">Segmented Vector Switches</span>
+          <div class="segmented-control">
+            <button class="seg-item active">Vectors</button>
+            <button class="seg-item">Raster 16x</button>
+            <button class="seg-item">Relight 3D</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Scale -->
+      <section class="token-section">
+        <h4 class="section-label">03 // TYPOGRAPHIC SCALE</h4>
+        <div class="typography-spec">
+          <div class="type-row">
+            <span class="type-class">Display XXL</span>
+            <span class="type-val">Space Grotesk 72px / -0.04em</span>
+          </div>
+          <div class="type-row">
+            <span class="type-class">Heading L</span>
+            <span class="type-val">Space Grotesk 32px / -0.02em</span>
+          </div>
+          <div class="type-row">
+            <span class="type-class">Body Mono</span>
+            <span class="type-val">JetBrains Mono 13px / +0.02em</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <!-- Interactive Cursor Follower -->
+  <div id="custom-cursor" class="custom-cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="art_engine.js"></script>
+  <script src="soundscape.js"></script>
+  <script src="design_system.js"></script>
+</body>
+</html>
+
