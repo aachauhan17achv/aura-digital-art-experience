@@ -136,4 +136,8 @@ D:\Antigravity Project's File\Digital Art Immersive Experience\
 ## 12. Repository & Remote Tracking
 * **Local Repository:** `D:\Antigravity Project's File\Digital Art Immersive Experience`
 * **Default Branch:** `main`
+* **Remote Origin:** `https://github.com/aachauhan17achv/aura-digital-art-experience.git`
+* **GitHub Repository:** https://github.com/aachauhan17achv/aura-digital-art-experience
 * **Git User:** `aachauhan17achv` <`aachauhan17.ac.hv@gmail.com`>
+* **Sync Status:** Synchronized with `origin/main`.
+
